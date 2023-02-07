@@ -13,16 +13,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <div id="form">
     <h1>S'inscrire</h1>
-    <form>
+    <form action ="treatInscription" method="post">
         <div class="legend">Nom</div>
         <div class="input"><input type="text" name="nom"></div>
         <div class="legend">Prénoms</div>
-        <div class="input"><input type="password" name="prenoms"></div>
+        <div class="input"><input type="text" name="prenoms"></div>
         <div class="legend">E-mail</div>
         <div class="input"><input type="email" name="email"></div>
         <div class="legend">Mot de passe</div>
-        <div class="input"><input type="password" name="pwd"></div>
-        <div><input type="submit" value="Se connecter"></div>
+        <div class="input"><input type="password" name="mdp"></div>
+        <div><input type="submit" value="S'inscrire"></div>
     </form>
     </div>
 </body>

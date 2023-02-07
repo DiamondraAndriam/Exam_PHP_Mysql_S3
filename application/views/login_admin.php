@@ -13,11 +13,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <div id="form">
     <h1>Se connecter</h1>
-    <form>
+    <form action ="treatLogAdmin" method="post">
         <div class="legend">E-mail</div>
-        <div class="input"><input type="email" name="email" placeholder="<?php echo $email; ?>"></div>
+        <div class="input"><input type="email" name="email" value="<?php echo $email; ?>"></div>
         <div class="legend">Mot de passe</div>
-        <div class="input"><input type="password" name="pwd" placeholder="<?php echo $mdp; ?>"></div>
+        <div class="input"><input type="password" name="pwd" value="<?php echo $mdp; ?>"></div>
         <div><input type="submit" value="Se connecter"></div>
     </form>
     </div>
