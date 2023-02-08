@@ -18,13 +18,9 @@ class Categorie_Controler extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
-    public function test($id)
-    {
-        $data['tab'] = $this->Mirenty_Model->ficheobjet($id);
-        $this->load->view('Categorie_View',$data);
-    }	
     public function trie_par_categorie($id)
     {
+        //$options = $this-> mirenty_model -> getAll('category');
         $this->load->helper('form_helper');
         
         $options = array(
@@ -44,17 +40,16 @@ class Categorie_Controler extends CI_Controller {
         . form_close();
         
         $this->load->view('Categorie_View',$data);
-
-
     }
     public function liste_utilisateur($id)
     {   
+        $this->load->model('Mirenty_model');
         $data['users']=$this->Mirenty_Model->getAll('utilisateur');
         $this->load->view('ListeUtilisateur_View',$data);
     }
     public function liste_objet_utilisateur($iduser)
     {
-        
+        $this->load->model('Mirenty_model');
         $data['userobjects']=$this->Mirenty_Model->userobjects($iduser);
         $this->load->view('ListeObjetUtilisateur_View',$data);
         
