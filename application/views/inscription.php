@@ -18,14 +18,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <form action ="treatInscription" method="post">
             <div class="legend">Nom</div>
             <div class="input"><input type="text" name="nom" placeholder="Nom"></div>
-            <div class="legend">Prénoms</div>
-            <div class="input"><input type="text" name="prenoms" placeholder="Prénoms"></div>
             <div class="legend">E-mail</div>
             <div class="input"><input type="email" name="email" placeholder="Email"></div>
             <div class="legend">Mot de passe</div>
             <div class="input"><input type="password" name="mdp" placeholder="Mot de passe"></div>
             <div><input type="submit" value="S'inscrire"  id="valider-btn"></div>
         </form>
+        <?php
+        if(isset($erreur)){ ?>
+            <hr/>
+            <div id="erreur"> Erreur de format du mail </div>
+        <?php } ?>
     </div>
     </div>
 </body>

@@ -14,6 +14,7 @@ CREATE TABLE Utilisateur(
     nom VARCHAR(20) NOT NULL,
     mdp VARCHAR(10) NOT NULL,
     email VARCHAR(20) UNIQUE NOT NULL,
+    date_inscrit DATETIME NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -55,12 +56,12 @@ CREATE TABLE Photo(
 INSERT INTO Admin(nom, mdp, email) VALUES('Admin1', '1', 'admin1@gmail.com');
 
 
-INSERT INTO Utilisateur(nom, mdp, email) VALUES('Aline', '0123456', 'aline@gmail.com');
-INSERT INTO Utilisateur(nom, mdp, email) VALUES('Annie', '000000', 'annieraz@gmail.com');
-INSERT INTO Utilisateur(nom, mdp, email) VALUES('Eric', '123456', 'eric@outlook.fr');
-INSERT INTO Utilisateur(nom, mdp, email) VALUES('Tom', 'as000', 'tom@gmail.com');
-INSERT INTO Utilisateur(nom, mdp, email) VALUES('Karina', '123', 'karina@gmail.com');
-INSERT INTO Utilisateur(nom, mdp, email) VALUES('John', '0000', 'john@gmail.com');
+INSERT INTO Utilisateur(nom, mdp, email, date_inscrit) VALUES('Aline', '0123456', 'aline@gmail.com','2023-02-06 10:02:01');
+INSERT INTO Utilisateur(nom, mdp, email, date_inscrit) VALUES('Annie', '000000', 'annieraz@gmail.com','2023-02-06 14:22:41');
+INSERT INTO Utilisateur(nom, mdp, email, date_inscrit) VALUES('Eric', '123456', 'eric@outlook.fr','2023-02-06 09:12:07');
+INSERT INTO Utilisateur(nom, mdp, email, date_inscrit) VALUES('Tom', 'as000', 'tom@gmail.com','2023-02-07 05:02:51');
+INSERT INTO Utilisateur(nom, mdp, email, date_inscrit) VALUES('Karina', '123', 'karina@gmail.com','2023-02-07 09:12:03');
+INSERT INTO Utilisateur(nom, mdp, email, date_inscrit) VALUES('John', '0000', 'john@gmail.com','2023-02-07 19:04:31');
 
 INSERT INTO Category(nom) VALUES('Accessoires');
 INSERT INTO Category(nom) VALUES('Electroniques');

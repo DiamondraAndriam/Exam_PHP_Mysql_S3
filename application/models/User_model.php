@@ -11,9 +11,16 @@ class User extends CI_Model {
         
         foreach($query -> result_array() as $row){
             $result['id'] = $row['id'];
+            $result['email'] = $email;
+            $result['nom'] = $row['nom'];
             return $result;
         }
+        return null;
     }
-    
+
+    public function addUser($nom, $email, $mdp){
+        $request = "INSERT INTO Utilisateur(nom, mdp, email, date_inscrit) VALUES('%s', '%s', '%s',now())";
+        $request = sprintf($request, $nom, $mdp,$email);
+    }
 }
 ?>

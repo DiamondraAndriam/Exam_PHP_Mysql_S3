@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
+
     public function admin(){
         $this -> load -> model('admin_model');
         $admin = $this -> admin_model -> getAdmin();
@@ -11,15 +12,23 @@ class Login extends CI_Controller {
     }
 
     public function user(){
-        $this -> load -> view('login_user');
+        if(isset($_GET['erreur'])){
+            $data['erreur'] = $this-> input -> get('erreur');
+            $this -> load -> view('login_user', $data);
+        }
+        else{
+            $this -> load -> view('login_user');
+        }
     }
 
     public function inscription(){
-        if(isset($this-> input -> get('erreur'))){
+        if(isset($_GET['erreur'])){
             $data['erreur'] = $this-> input -> get('erreur');
+            $this -> load -> view('inscription', $data);
+        }
+        else{
             $this -> load -> view('inscription');
         }
-        $this -> load -> view('inscription');
     }
 
     public function treatLogAdmin(){
@@ -29,11 +38,12 @@ class Login extends CI_Controller {
     }
 
     public function treatLogUser(){
+        $this-> load -> model('user_model');
         $email = $this -> input -> post('email');
         $mdp = $this -> input -> post('pwd');
-        $this->load->model('User_model');
-        if($this->user_model->findUser($email,$mdp) == true){
+        if($this->user_model->findUser($email,$mdp)!= null){
             redirect("acceuil");
+
         }
         else{
             redirect("login/inscription?erreur=1");
@@ -42,13 +52,13 @@ class Login extends CI_Controller {
     }
     
     public function treatInscription(){
+        $this-> load -> model('user_model');
         $nom = $this -> input -> post('nom');
-        $prenoms = $this -> input -> post('prenoms');
         $email = $this -> input -> post('email');
         $mdp = $this -> input -> post('pwd');
-        echo $nom;
-        echo $prenoms;
-        echo $email;
-        echo $mdp;
+        $this -> user_model -> addUser($nom, $email, $mdp);
+        $data = $this -> user_model -> findUser($nom, $email);
+        $this -> session -> set_userdata('user',$data);
+        redirect('profil/utilisateur_profil');
     }
 }

@@ -22,6 +22,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div><input type="submit" value="Se connecter" id="valider-btn"></div>
     </form>
     <div id="login_link">Pas encore de compte? <a href="inscription">S'inscrire</a></div>
+    <?php
+        if(isset($erreur)){ ?>
+            <hr/>
+            <div id="erreur"> Erreur du mail ou du mot de passe </div>
+        <?php } ?>
     </div>
     </div>
 </body>
