@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 * {
   font-family: 'Open Sans', sans-serif;
 }
@@ -11,7 +10,7 @@ body {
   background-repeat: no-repeat;
 }
 
-#form{
+#back{
   background: url("img_log/rose.avif");
   background-repeat: no-repeat;
   position: absolute;
@@ -19,17 +18,17 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  height: 500px;
+  height: max-content;
   text-align: center;
   display: flex;
   color: white;
-  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .8);
 }
 
-form {
+#form {
   width: 100%;
-  padding: 20px 0;
-  background: rgba(20, 40, 40, .8);
+  padding-bottom: 10px;
+  background: rgba(20, 40, 40, .6);
   transition: .2s;
 }
 
@@ -56,12 +55,22 @@ input {
   padding: 0;
 }
 
-#join-btn {
+#valider-btn {
   border: 1px solid rgba(10, 180, 180, 1);
-  background: rgba(20, 20, 20, .6);
+  background: rgba(20, 20, 20, .8);
   font-size: 18px;
   color: white;
   margin-top: 20px;
-  padding: 10px 80px;
+  padding: 0 10px;
   cursor: pointer;
+  width: 270px;
+  height: 40px;
+}
+
+#link{
+  margin-top: 30px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
 }
