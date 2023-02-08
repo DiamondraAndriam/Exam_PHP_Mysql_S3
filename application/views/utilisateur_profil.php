@@ -9,7 +9,7 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="../../assets/css/profile-style.css">
-     <link rel="stylesheet" href="../../assets/bootstrap-3.3.6-dist/css/bootstrap.css">
+     <link rel="stylesheet" href="../../assets/bootstrap/bootstrap-3.3.6-dist/css/bootstrap.css">
      <title> Profil Utilisateur </title>
 </head>
 <body>
@@ -19,7 +19,7 @@
           </div>
           <div class="col-md-offset-3 col-md-5">
                <nav class="menu-line">
-                    <a href="<?php site_url('mirenty_Model/liste'); ?>"> Accueil </a>
+                    <a href="<?php echo site_url('Categorie_Controler/liste_utilisateur');?>"> Accueil </a>
                     <a href="" class="active"> Profil </a>
                     <a href=""> Echanges </a>
                     <a href=""> Contacts </a>

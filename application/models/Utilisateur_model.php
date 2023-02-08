@@ -14,7 +14,7 @@
                     $result[$i]['description'] = $row['descriptions'];
                     $result[$i]['estimation'] = $row['estimation'];
                     $result[$i]['image'] = $row['lien'];
-                    $result[$i]['id_objet'] = $row['idObjet'];
+                    $result[$i]['id_objet'] = $row['idobjet'];
                     $i++;
                }
                return $result;

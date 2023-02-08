@@ -76,10 +76,17 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
-	'database' => 'takalo',
-	'dbdriver' => 'mysqli',
+	
+	// 'username' => 'root',
+	// 'password' => 'root',
+	// 'database' => 'takalo',
+	// 'dbdriver' => 'mysqli',
+	
+	'username' => 'postgres',
+	'password' => '0000',
+	'database' => 'ci',
+	'dbdriver' => 'postgre',
+	
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

@@ -22,13 +22,23 @@ class Mirenty_Model extends CI_Model
         $data['lienphoto'] = $this->Mirenty_Model->getphotobyidobject($data['id']);
         return $data;
     }
-    function getAll($tablename)
+    function getAllbyrow($tablename)
     {
         $tab = array();
         $req = $this->db->query('select * from ' . $tablename);
         $bat = $req->result_array();
         for ($i = 0; $i < count($bat); $i++) {
             $tab[$i] = $bat[$i];
+        }
+        return $tab;
+    }
+    function getcol($tablename,$colname)
+    {
+        $tab = array();
+        $req = $this->db->query('select '.$colname.' from ' . $tablename);
+        $bat = $req->result_array();
+        for ($i = 0; $i < count($bat); $i++) {
+            $tab[$i] = $bat[$i][$colname];
         }
         return $tab;
     }
@@ -115,10 +125,8 @@ class Mirenty_Model extends CI_Model
     }
     function search($keywords,$category,$col1, $table, $location,$col2) {
 
-        // Appeler la fonction de recherche avec les critères de recherche appropriés
         $results = $this->recherche($keywords, $col1, $table, $col2);
         
-        // Filtrer les résultats en fonction des critères de catégorie et de localisation
         if (!empty($category)) {
             $results = array_filter($results, function($result) use ($category) {
                 return $result['column3'] == $category;
@@ -129,7 +137,14 @@ class Mirenty_Model extends CI_Model
             return $result['column4'] == $location;
             });
         }
-        // Retourner les résultats filtrés
         return $results;
+        }
+        
+        function getuserbyid($id)
+        {
+            $tab = array();
+            $req = $this->db->query('select * from utilisateur where id='.$id);
+            $bat = $req->row_array();
+            return $bat;
         }
 }

@@ -34,7 +34,7 @@ class Login extends CI_Controller {
     public function treatLogAdmin(){
         $email = $this -> input -> post('email');
         $mdp = $this -> input -> post('pwd');
-        redirect("categorie_Controler/trie_par_categorie/");
+        redirect("categorie_Controler/trie_par_categorie/1");
     }
 
     public function treatLogUser(){

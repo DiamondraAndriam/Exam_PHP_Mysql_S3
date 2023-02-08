@@ -8,8 +8,10 @@
 }
 
 img {
-    width: 40%;
-    height: 40%;
+    width: 36%;
+    height: 36%;
+    border-radius: 2%;
+    margin: 5px 5px 10px 5px;
 }
 
 .form_class {
@@ -17,4 +19,20 @@ img {
     border-width: 5px;
     border-color: black;
     border-radius: 10px 10px 10px 10px;
+}
+
+.row {
+    border: 1px solid grey;
+    margin: 2px;
+    border-radius: 3%;
+    background-color: rgb(238, 233, 226);
+    box-shadow: 10px;
+}
+
+.row button {
+    border: 1px solid grey;
+    margin: 80% 2px 2px 2px;
+    border-radius: 5%;
+    box-shadow: 10px;
+    background-color: silver;
 }

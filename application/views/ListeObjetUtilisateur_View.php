@@ -1,41 +1,116 @@
-            <?php
+<?php
             // print_r($userobjects);
             // echo $userobjects['userobjects']['nom'];
-            foreach ($userobjects['userobjects'] as $object) {
+           
                 // echo $object['nom'];
                 // echo $object['utilisateur'];
             ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "../../assets/bootstrap-3.3.6-dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href= "../../assets/css/categorie.css "/>
-    <script src="../../assets/javascript/default.js"> </script>
-    <link href="../../assets/css/layout.css" rel="stylesheet" type="text/css" media="all">
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href= "../../assets/bootstrap-3.3.6-dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href= "../../assets/css/liste.css"/>
+        <script src="../../assets/javascript/default.js"> </script>
 </head>
 
-<body id="top">
-
-    <div class="wrapper row2">
-        <article class="hoc container clear">
-            <!-- ################################################################################################ -->
-            <div class="one_half first">
-                <h6 class="heading font-x3">
-                    <span>raesent non eros<span>
-                </h6>
-                <p>Interdum porta praesent non eros at diam faucibus pharetra.</p>
-                <p class="btmspace-30">Mauris dolor diam posuere hendrerit suscipit ut convallis a erat aliquam sit amet magna in odio hendrerit eleifend phasellus vehicula auctor nisi in sollicitudin gravida tortor fusce purus nullam&hellip;</p>
-                <footer><a class="btn" href="#">Read More</a></footer>
-            </div>
-            <div class="one_half">
-                <a class="imgover" href="#"><img class="borderedbox inspace-10" src="../../<?php echo $object['lienphoto']?>" alt=""></a>
-            </div>
-            <!-- ################################################################################################ -->
-        </article>
-
-    </div>
-    <?php } ?>
-</body>
+    <body>
+            
+            <div>
+                    <ol>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <h4>
+                                        nom
+                                    </h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4>
+                                        proprietaire actuelle
+                                    </h4>
+                                </div>
+                                <div class="col-md-1">
+                                    <h4>
+                                        categorie
+                                    </h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4>
+                                        descriptions
+                                    </h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4>
+                                        Estimation
+                                    </h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4>
+                                        Photos
+                                    </h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4>
+                                        Echanger
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                        $id = 1;
+                        foreach ($userobjects['userobjects'] as $object) 
+                        {
+                        ?>
+                            <li>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <p>
+                                                <?php echo $object['nom'];?>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>
+                                                <?php echo $object['utilisateur'];?>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <p>
+                                                <?php echo $object['categorie'];?>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>
+                                                <?php echo $object['description'];?>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>
+                                                <?php echo $object['estimation'];?>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>
+                                                <?php echo "../../". $object['lienphoto'];?>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>
+                                                <button type="">
+                                                    <a href="<?php echo site_url('Echange/echange') . "/" . $id ?>">Echanger</a>
+                                                </button>
+                                            </p>
+                                        </div>
+                                    </div>                        
+                                </div>
+                        </li>
+                        <?php
+                            $id++;
+                            }
+                        ?>
+                </ol>
+        </div>
+    </body>
 </html>
