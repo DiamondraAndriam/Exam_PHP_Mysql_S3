@@ -7,5 +7,8 @@
                $data['profil'] = $this->utilisateur_model->get_profile_content($user);
                $this->load->view('utilisateur_profil', $data);
           }
+          public function load_formulaire() {
+               $this->load->view('ajout_objet');
+          }
      }
 ?>

@@ -1,4 +1,128 @@
 body {
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     background-image: whitesmoke;
 }
+
+.header-line {
+     background-color: white;
+     height:75px;
+     box-shadow: 3px 3px 15px rgb(223, 223, 223);
+     position: fixed;
+     top: 0;
+     width: 102%;
+}
+
+.contenu-line {
+     height: 650px;
+     background-color: white;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.foot-line {
+     height: 175px;
+     background-color: rgb(7, 7, 7);
+}
+
+#ba {
+     width: 185px;
+     height: 30px;
+     margin-left: 35px;
+     margin-top: 20px;
+     color: white;
+     background-color: coral;
+     border: transparent 1px solid;
+     border-radius: 15px;
+     box-shadow: 3px 3px 15px lightgray;
+     transition: 0.5s ease-in-out;
+}
+
+#ba:hover {
+     background-color: salmon;
+     transform: scale(1.05);
+}
+
+.menu-line {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+}
+
+.menu-line a {
+     padding-top: 20px;
+     color: lightslategray;
+}
+
+#signin {
+     color: white;
+     background-color: dodgerblue;
+     width: 125px;
+     border: 1px solid transparent;
+     box-shadow: 3px 3px 15px lightgray;
+     transition: 0.5s ease-in-out;
+}
+
+#signin:hover {
+     background-color: rgb(0, 0, 87);
+     transform: scale(1.05);
+}
+
+.line-one {
+     height: 60%;
+}
+
+.line-one h1 {
+     padding-top: 175px;
+     color: black;
+     font-size: 3em;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.line-one h1 {
+     text-align: center;
+}
+
+.line-one p {
+     padding-top: 20px;
+     font-size: 15px;
+     padding-left: 29%;
+     color: rgb(20, 20, 20);
+}
+
+.line-one, .line-two {
+     background-color: transparent;
+}
+
+.line-two button {
+     width: 185px;
+     height: 35px;
+     color: white;
+     border: 1px solid transparent;
+     background-color: rgb(5, 5, 112);
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     box-shadow: 3px 3px 15px lightslategray;
+     transition: all .3s ease-in-out;
+}
+
+.line-two button:hover {
+     background-color: dodgerblue;
+     transform: scale(1.05);
+}
+
+#connect {
+     margin-left: 36%;
+}
+
+#deco {
+     /* background-color: yellow; */
+     background-color: transparent;
+     border-bottom: 7px solid yellow;
+     width: 200px;
+}
+
+#about {
+     margin-left: 25px;
+}
+
 
